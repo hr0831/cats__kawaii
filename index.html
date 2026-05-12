@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIG & NOAH | Official Angel Cats</title>
+    <style>
+        :root {
+            --rig-gray: #78909c;
+            --noah-black: #263238;
+            --accent-pink: #ff8a80;
+            --bg-soft: #f4f7f6;
+            --card-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* --- Global Style --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: var(--bg-soft);
+            color: #333;
+            font-family: 'Helvetica Neue', Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 15px; }
+
+        /* --- Header --- */
+        header {
+            background: linear-gradient(135deg, var(--rig-gray), var(--noah-black));
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            clip-path: ellipse(180% 100% at 50% 0%);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: clamp(2.5rem, 8vw, 3.5rem); /* スマホで自動縮小 */
+            margin-bottom: 10px;
+            animation: fadeInUp 1s ease;
+        }
+
+        header p {
+            opacity: 0.9;
+            letter-spacing: 2px;
+            font-size: clamp(0.8rem, 4vw, 1rem);
+            animation: fadeInUp 1.2s ease;
+        }
+
+        /* --- Main Layout --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        /* --- Cat Cards --- */
+        .cat-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            animation: fadeInUp 1.5s ease;
+        }
+
+        .cat-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .img-box { width: 100%; height: 300px; overflow: hidden; }
+        .img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
+        .cat-card:hover .img-box img { transform: scale(1.08); }
+
+        .info-box { padding: 25px; }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .rig-badge { background: #e3f2fd; color: #1976d2; }
+        .noah-badge { background: #eceff1; color: #37474f; }
+
+        .status-row { margin-top: 12px; }
+        .status-label { display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: bold; }
+        .bar-container { background: #eee; height: 8px; border-radius: 10px; overflow: hidden; margin-top: 4px; }
+        .bar-fill { height: 100%; border-radius: 10px; }
+
+        /* --- Relation Card --- */
+        .relation-card {
+            grid-column: 1 / -1;
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            border: 1.5px dashed var(--accent-pink);
+            animation: fadeInUp 1.8s ease;
+        }
+
+        /* --- Photo Gallery (Responsive) --- */
+        .gallery-title { text-align: center; margin: 50px 0 20px; font-size: 1.8rem; }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* スマホは2列 */
+            gap: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .gallery { grid-template-columns: repeat(4, 1fr); } /* PCは4列 */
+        }
+
+        .gallery-item {
+            background: white;
+            padding: 8px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            animation: float 4s infinite ease-in-out;
+            text-align: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .gallery-caption {
+            font-size: 0.7rem;
+            color: #666;
+            margin-top: 6px;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>RIG & NOAH</h1>
+            <p>〜 かまちょ上手と抱っこ魔の共同生活 〜</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <div class="grid">
+            <article class="cat-card">
+                <div class="img-box"><img src="IMG_7734_Original.jpg" alt="Rig"></div>
+                <div class="info-box">
+                    <span class="badge rig-badge">かまちょ上手な天使ちゃん</span>
+                    <h2>リグ (Rig)</h2>
+                    <p style="font-size: 0.9rem;">
+                        人が集中している時に限って「ボクを見て！」と現れる、甘えん坊の天才。グレーの毛並みが美しい、心優しい男の子です。
+                    </p>
+                    <div class="status-row">
+                        <div class="status-label"><span>甘えん坊度</span><span>120%</span></div>
+                        <div class="bar-container"><div class="bar-fill" style="width: 100%; background: var(--rig-gray);"></div></div>
+                    </div>
+                    <div class="status-row">
+                        <div class="status-label"><span>作業妨害(かまちょ)スキル</span><span>MAX</span></div>
+                        <div class="bar-container"><div class="bar-fill" style="width: 100%; background: var(--accent-pink);"></div></div>
+
+                    </div>
+                </div>
+            </article>
+
+            <article class="cat-card">
+                <div class="img-box"><img src="IMG_9992_Original.jpg" alt="Noah"></div>
+                <div class="info-box">
+                    <span class="badge noah-badge">甘え上手な天使ちゃん</span>
+                    <h2>ノア (Noah)</h2>
+                    <p style="font-size: 0.9rem;">
+                        「抱っこして！」と全身でアピールしてくる甘えん坊な黒猫ちゃん。腕の中が世界で一番落ち着く場所みたいです。
+                    </p>
+                    <div class="status-row">
+                         <div class="status-label"><span>抱っこ大好き度</span><span>150%</span></div>
+                        <div class="bar-container"><div class="bar-fill" style="width: 100%; background: var(--noah-black);"></div></div>
+                    </div>
+                    <div class="status-row">
+                        <div class="status-label"><span>癒やしオーラ</span><span>100%</span></div>
+                        <div class="bar-container"><div class="bar-fill" style="width: 100%; background: var(--accent-pink);"></div></div>
+
+                    </div>
+                </div>
+            </article>
+
+            <div class="relation-card">
+                <h3 style="color: var(--accent-pink);">天使たちの日常</h3>
+                <p style="font-size: 0.85rem; margin-top: 8px;">
+                    激しくケンカしたかと思えば、いつの間にかくっついて夢の中。<br>
+                    二匹でひとつの、かけがえのない宝物です。
+                </p>
+            </div>
+        </div>
+
+        <h2 class="gallery-title">Daily Archives</h2>
+        <div class="gallery">
+            <div class="gallery-item" style="animation-delay: 0s;">
+                <img src="IMG_1175_Original.jpg" alt="Noah in kitchen">
+                <p class="gallery-caption">お膝の上で満足そうなノアちゃん</p>
+            </div>
+            <div class="gallery-item" style="animation-delay: 0.2s;">
+                <img src="IMG_3109_Original.jpg" alt="Noah on green chair">
+                <p class="gallery-caption">特等席でキメ顔ポーズ！</p>
+            </div>
+            <div class="gallery-item" style="animation-delay: 0.4s;">
+                <img src="IMG_3115_Original_Original.jpg" alt="Noah playing">
+                <p class="gallery-caption">指を甘噛み…</p>
+            </div>
+            <div class="gallery-item" style="animation-delay: 0.6s;">
+                <img src="IMG_4143_Original.jpg" alt="Rig on cushion">
+                <p class="gallery-caption">リグちゃんのまったりクッションタイム</p>
+            </div>
+            <div class="gallery-item" style="animation-delay: 0.8s;">
+                <img src="IMG_6308_Original.jpg" alt="Together bridge">
+                <p class="gallery-caption">ストーブの頭上で並ぶ二匹</p>
+            </div>
+            <div class="gallery-item" style="animation-delay: 1.0s;">
+                <img src="IMG_6341_Original.jpg" alt="Sleeping cats">
+                <p class="gallery-caption">ケンカのあとは仲良くスヤァ</p>
+            </div>
+            <div class="gallery-item" style="animation-delay: 1.2s;">
+                <img src="IMG_6352_Original.jpg" alt="Cats in circle">
+                <p class="gallery-caption">まんまる集合！癒やしのハート</p>
+            </div>
+            <div class="gallery-item" style="animation-delay: 1.4s;">
+                <img src="IMG_7875_Original.jpg" alt="Rig on lap">
+                <p class="gallery-caption">お膝の上が大好きなリグちゃん</p>
+            </div>
+        </div>
+<section class="card" style="margin-top: 40px; animation: fadeInUp 2s ease; border: 2px solid rgba(255, 138, 128, 0.2); background: linear-gradient(to bottom, #ffffff, #fffafa);">
+    <h2 class="card-title" style="border-left: 5px solid var(--accent-pink); color: var(--noah-black);">Message to Angels</h2>
+    <p style="font-size: 0.85rem; color: #666; margin-bottom: 25px; padding-left: 5px;">
+        リグとノアへのメッセージはこちらから。🐾<br>
+        <span style="font-size: 0.75rem; opacity: 0.7;">※はちの個人メアドに届くよ</span>
+    </p>
+    
+    <form action="https://formspree.io/f/https://formspree.io/f/xzdoogwy" method="POST" style="display: grid; gap: 20px; text-align: left;">
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+            <div style="position: relative;">
+                <label style="display: block; font-size: 0.75rem; font-weight: bold; color: var(--rig-gray); margin-bottom: 8px; letter-spacing: 1px;">おなまえ</label>
+                <input type="text" name="name" required placeholder="例：猫好きさん" 
+                    style="width: 100%; padding: 15px; border-radius: 15px 40px 15px 15px; border: 2px solid #eee; background: #fff; outline: none; transition: all 0.3s ease; font-size: 0.9rem;"
+                    onfocus="this.style.borderColor='var(--accent-pink)'; this.style.boxShadow='0 0 10px rgba(255,138,128,0.1)';"
+                    onblur="this.style.borderColor='#eee'; this.style.boxShadow='none';">
+            </div>
+            <div style="position: relative;">
+                <label style="display: block; font-size: 0.75rem; font-weight: bold; color: var(--rig-gray); margin-bottom: 8px; letter-spacing: 1px;">メールアドレス</label>
+                <input type="email" name="email" required placeholder="example@mail.com" 
+                    style="width: 100%; padding: 15px; border-radius: 15px 40px 15px 15px; border: 2px solid #eee; background: #fff; outline: none; transition: all 0.3s ease; font-size: 0.9rem;"
+                    onfocus="this.style.borderColor='var(--accent-pink)'; this.style.boxShadow='0 0 10px rgba(255,138,128,0.1)';"
+                    onblur="this.style.borderColor='#eee'; this.style.boxShadow='none';">
+            </div>
+        </div>
+        
+        <div style="position: relative;">
+            <label style="display: block; font-size: 0.75rem; font-weight: bold; color: var(--rig-gray); margin-bottom: 8px; letter-spacing: 1px;">メッセージ</label>
+            <textarea name="message" required rows="5" placeholder="リグちゃんノアちゃんへ一言どうぞ！" 
+                style="width: 100%; padding: 15px; border-radius: 15px; border: 2px solid #eee; background: #fff; outline: none; transition: all 0.3s ease; font-size: 0.9rem; resize: none;"
+                onfocus="this.style.borderColor='var(--accent-pink)'; this.style.boxShadow='0 0 10px rgba(255,138,128,0.1)';"
+                onblur="this.style.borderColor='#eee'; this.style.boxShadow='none';"></textarea>
+        </div>
+        
+        <div style="text-align: center; margin-top: 10px;">
+            <style>
+                .puni-button {
+                    background: linear-gradient(135deg, #aabdc1 0%, var(--accent-pink) 100%);
+                    color: white;
+                    border: none;
+                    padding: 18px 50px;
+                    border-radius: 100px;
+                    font-weight: bold;
+                    font-size: 1.1rem;
+                    cursor: pointer;
+                    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                    box-shadow: 0 8px 20px rgba(255, 138, 128, 0.3);
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 12px;
+                    letter-spacing: 1px;
+                }
+                .puni-button:hover {
+                    transform: scale(1.05) translateY(-3px);
+                    box-shadow: 0 12px 25px rgba(255, 138, 128, 0.4);
+                </div>
+            </form>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 RIG & NOAH | Forever Angel Cats</p>
+    </footer>
+
+</body>
+</html>
